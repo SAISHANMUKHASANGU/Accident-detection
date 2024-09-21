@@ -42,12 +42,7 @@ def get_location():
                         '$loc.position.location.horizontalaccuracy; '\
                         '$loc.stop()' %(accuracy))
 
-        #Remove >>> $acc = [math]::Round($acc*1.5) <<< to remove accuracy builder
-        #Once removed, try setting accuracy = 10, 20, 50, 100, 1000 to see if that affects the results
-        #Note: This code will hang if your desired accuracy is too fine for your device
-        #Note: This code will hang if you interact with the Command Prompt AT ALL 
-        #Try pressing ESC or CTRL-C once if you interacted with the CMD,
-        #this might allow the process to continue
+
 
         p = sp.Popen(pshellcomm, stdin = sp.PIPE, stdout = sp.PIPE, stderr = sp.STDOUT, text=True)
         (out, err) = p.communicate()
